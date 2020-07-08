@@ -7,38 +7,40 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Container for Responsive  -->
-    <div class="container-fluid">
-      <div id="start">Start Quiz!</div>
-      <div id="quiz" style="display: none;">
-        <div id="question"></div>
-        <div id="qImg"></div>
-        <div id="choices">
-          <div class="choice" id="A" onclick="checkAnswer('A')"></div>
-          <div class="choice" id="B" onclick="checkAnswer('B')"></div>
-          <div class="choice" id="C" onclick="checkAnswer('C')"></div>
-        </div>
-        <div id="timer">
-          <div id="counter"></div>
-          <div id="btimeGauge"></div>
-          <div id="timeGauge"></div>
-        </div>
-        <div id="progress"></div>
+    <div class="container">
+      <div id="questions-container" class="hide"></div>
+      <div id="question">Question</div>
+      <div id="answer-buttons" class="btn-grid">
+        <button class="btn">Answer1</button>
+        <button class="btn">Answer2</button>
+        <button class="btn">Answer3</button>
+        <button class="btn">Answer4</button>
       </div>
-      <div id="scoreContainer" style="display: none;"></div>
+      <div class="controls">
+        <!-- Start Button -->
+        <button id="start-btn" class="start-btn btn">Start Game</button>
+        <button id="next-btn" class="start-btn btn hide">Next</button>
+      </div>
+      <!--1. timer  -->
+
+      <p id="timer">Timer</p>
+
+      <div id="question"></div>
+      <div id="choices">
+        <div class="choice" id="A" onclick="checkAnswer('A')"></div>
+        <div class="choice" id="B" onclick="checkAnswer('B')"></div>
+        <div class="choice" id="C" onclick="checkAnswer('C')"></div>
+      </div>
+
+      <!-- 2. score -->
+      <!-- 3. question num -->
+
+      <!-- 4. questions remaining -->
+
+      <!-- row for game -->
+      <!-- form to contain the questions -->
+      <!-- start button -->
+      <script src="./script.js"></script>
     </div>
-
-    <!-- Start Button -->
-    <!--1. timer  -->
-    <!-- 2. score -->
-    <!-- 3. question num -->
-    -->
-    <!-- 4. questions remaining -->
-
-    <!-- row for game -->
-    <!-- form to contain the questions -->
-    <!-- start button -->
-
-    <script src="./script.js"></script>
   </body>
 </html>

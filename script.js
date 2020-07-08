@@ -1,58 +1,113 @@
-// // USER STORY
-// AS A coding bootcamp student
-// timed quiz on JavaScript fundamentals
-// that stores high scores
-// // add a share with friends
-// maybe a fun graphic that goes high when points go up
-// (may need to set empty values?)
-
 // STARTING DATA Data from the DOM==============================================
 
-var startEl = document.getElementById("start");
-var questionEl = document.getElementById("question");
-var startEl = document.getElementById("start");
-// choices will be an array of choices
-var choicesEl = document.getElementById("choices");
+const startButton = document.getElementById("start-btn");
+console.log("startButton");
 var timerEl = document.getElementById("timer");
+var choiceA = document.getElementById("A");
+var choiceB = document.getElementById("B");
+var choiceC = document.getElementById("C");
 
-// Helper Functions==========================================================
+// // create questions in array
 
-// User Interactions (or inputs) =============================================
+let questions = [
+  {
+    question:
+      "To access an HTML element, JavaScript can use the document.getElementById(id) to target?",
+    choiceA: "class",
+    choiceB: "tags",
+    choiceC: "id",
+    choiceD: "enemies",
+    correct: "C",
+  },
+  {
+    question: "'var x, y, z;' is an example of how to?",
+    choiceA: "declare variables",
+    choiceB: "assign values",
+    choiceC: "confuse enemies",
+    choiceD: "compute values",
+    correct: "A",
+  },
+  {
+    question: "'var x, y, z;' is an example of how to?",
+    choiceA: "declare variables",
+    choiceB: "assign values",
+    choiceC: "confuse enemies",
+    choiceD: "compute values",
+    correct: "A",
+  },
+  {
+    question: "The result of adding '5' + 2 + 3 is?",
+    choiceA: "55",
+    choiceB: "25",
+    choiceC: "10",
+    choiceD: "523",
+    correct: "D",
+  },
+];
+console.log(questions.length);
 
-// Updating Display based on user interactions ===============================
+var score = 0;
 
-// User will see a message with rules of games
+for (let i = 0; i < questions.length; i++) {
+  console.log(questions[i]);
+  var answer = confirm(questions[i].q);
+}
 
-// User will click a start button
+// add a loop so each question comes up.
 
-// Rules will dissapear
+// FUNCTIONS=======================
 
-// Start button will dissapear
+// create a function connected to startgame, put "event" to act on what's been listened for:
+function startGame() {
+  console.log("startGame");
 
-// Main view appears with questions, multiple answers, timer
+  // timer starts
+  // array of Q&A is displayed
+}
 
-// timer starts countdown from 50seconds
-// if counter reaches 0
-// then game is over
+// USER INTERACTIONS
 
-// user clicks on multiple choice answer
+startButton.addEventListener("click", startGame);
 
-// if user is correct they get a point
-// and user is alerted "correct"
+// // Helper Functions==========================================================
 
-// else (or is this and "when/then promise?")
-// user is alerted "incorrect"
-// THEN time is subtracted from clock
+// // var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-// user will repeat questions and answer
+// // start quiz
 
-// WHEN all questions are answered or the timer reaches 0
-// THEN the game is over
+// // Updating Display based on user interactions ===============================
 
-// WHEN the game is over
-// Prompt to save user initials and score
+// // User will click a start button
 
-// Starting Data (initialization)  ========================
-// DOM Elements
+// // Rules will dissapear
 
-// Clear the form==========================
+// // Start button will dissapear
+
+// // Main view appears with questions, multiple answers, timer
+
+// // timer starts countdown from 50seconds
+
+// // if counter reaches 0
+// // then game is over
+
+// // user clicks on multiple choice answer
+
+// // if user is correct they get a point
+// // and user is alerted "correct"
+
+// // else (or is this and "when/then promise?")
+// // user is alerted "incorrect"
+// // THEN time is subtracted from clock
+
+// // user will repeat questions and answer
+
+// // WHEN all questions are answered or the timer reaches 0
+// // THEN the game is over
+
+// // WHEN the game is over
+// // Prompt to save user initials and score
+
+// // Starting Data (initialization)  ========================
+// // DOM Elements
+
+// // Clear the form==========================
