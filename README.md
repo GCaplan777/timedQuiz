@@ -1,42 +1,54 @@
-# 04 Web APIs: Code Quiz
+READ ME
+https://github.com/GCaplan777/timedQuiz
+https://gcaplan777.github.io/timedQuiz/
 
-As you proceed in your career as a web developer, you will probably be asked to complete a coding assessment, which is typically a combination of multiple-choice questions and interactive challenges. Build a timed code quiz with multiple-choice questions. This app will run in the browser and feature dynamically updated HTML and CSS powered by your JavaScript code. It will also feature a clean and polished user interface and be responsive, ensuring that it adapts to multiple screen sizes.
+This is my BootCamp assignment for a multiple choice quiz.
 
-## User Story
+I had everything up and running and functioning well–except that after the first question showed, I needed to press the answer for the second question twice before the next question would appear. I did a near midnight "askBCS" and I hate to say, but I think the debugging process with the person from BCS may have led to additional comments and changes ended up giving me a few more issues to work out.
 
-```
-AS A coding bootcamp student
-I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
-SO THAT I can gauge my progress compared to my peers
-```
+I did get great advice from AskBCS for cleaning up code and trying to hide elements until my quiz started. I was told to use a class in JavaScript to make it tidy, and unfortunately, I can't employ that in time for this submission, but i can see how it would look great AND i know the class work we went through to reference. See attached screenshot for reference.
 
-## Acceptance Criteria
+And so without further ado............
 
-```
-GIVEN I am taking a code quiz
-WHEN I click the start button
-THEN a timer starts and I am presented with a question
-WHEN I answer a question
-THEN I am presented with another question
-WHEN I answer a question incorrectly
-THEN time is subtracted from the clock
-WHEN all questions are answered or the timer reaches 0
-THEN the game is over
-WHEN the game is over
-THEN I can save my initials and score
-```
+JavaScript Quiz.
+I set up the DOM Elements to take variables from the HTML
 
-The following animation demonstrates the application functionality:
+Start button
+score button
+timer element
+question element in a div for the questions to live
+4 choices targeting buttons in HTML
 
-![code quiz](./Assets/04-web-apis-homework-demo.gif)
+I set up starting variables:
+elements styles to hide until start button
+a currentQuestionIndex
+Wins
+Timeleft
 
-### Review
+I created an Object of Arrays for questions and answer (called here “correct”)
 
-You are required to submit the following for review:
+I’ve console logged here and intermittent throughout
 
-* The URL of the functional, deployed application.
+1st Function
+Start game (triggered by event listen)
+showQuestion - to reveal the questions (set up in a separate function)
+timer counter
 
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
+2nd Function
+showQuestion
+has if/ else statement
+if - currentQuestionIndex is greater or equal to index length of my array “questions.length”, then the game ends.
 
-- - -
-© 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+else - it is set to call up the next question in the array)
+
+3rd Function
+scoreQuestion
+set up to listen for response of which button is clicked
+That button is compared with the stored correct answer.
+If - the values are equal, a point in the win is added.
+Else - time is deducted from the countdown
+
+USER INTERACTIONS
+
+startbutton goes to function - startGame
+choiceA - D when clicked will go to function - scoreQuestion

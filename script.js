@@ -12,6 +12,15 @@ var selectD = document.getElementById("D");
 
 // STARTING DATA==================================================
 
+// Style to hide starting data (I can remember how to do this from DOM as a class, but then if i want to use later with click elements, do i use a loop?)
+questionEl.style.display = "none";
+selectA.style.display = "none";
+selectB.style.display = "none";
+selectC.style.display = "none";
+selectD.style.display = "none";
+scoreButton.style.display = "none";
+timerEl.style.display = "none";
+
 //variable to determine what question we're on.
 var currentQuestionIndex = 0;
 // variable to determine score
@@ -84,6 +93,12 @@ function startGame() {
 
 function showQuestion() {
   console.log("show function has started");
+  questionEl.style.display = "initial";
+  selectA.style.display = "initial";
+  selectB.style.display = "initial";
+  selectC.style.display = "initial";
+  selectD.style.display = "initial";
+  scoreButton.style.display = "initial";
   if (currentQuestionIndex == questions.length - 1) {
     console.log("game over");
     console.log(
@@ -140,7 +155,7 @@ selectD.addEventListener("click", function () {
   scoreQuestion("D");
 });
 
-//only show the questiona nd options onces start but is clicked
+//NOTES FROM BCS only show the questiona nd options onces start but is clicked
 //dynamically create the options using for loop
 //while creating the options add a class of "options" to all and event add a data attr and add a value
 //add a event liste to options class
