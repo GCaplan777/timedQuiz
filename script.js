@@ -1,18 +1,30 @@
 // STARTING DATA Data from the DOM==============================================
 
-const startButton = document.getElementById("start-btn");
+var startButton = document.getElementById("start-btn");
 console.log("startButton");
+var scoreButton = document.getElementById("score-btn");
 var timerEl = document.getElementById("timer");
-var choiceA = document.getElementById("A");
-var choiceB = document.getElementById("B");
-var choiceC = document.getElementById("C");
+var questionEl = document.getElementById("questionDiv");
+var selectA = document.getElementById("A");
+var selectB = document.getElementById("B");
+var selectC = document.getElementById("C");
+var selectD = document.getElementById("D");
 
-// // create questions in array
+// STARTING DATA==================================================
+
+//variable to determine what question we're on.
+var currentQuestionIndex = 0;
+// variable to determine score
+var wins = 0;
+// variable for timer
+var timeLeft;
+
+// // create questions Object of arrays
 
 let questions = [
   {
     question:
-      "To access an HTML element, JavaScript can use the document.getElementById(id) to target?",
+      "To access an HTML element, JavaScript can use the document.getElementById to target...?",
     choiceA: "class",
     choiceB: "tags",
     choiceC: "id",
@@ -46,68 +58,89 @@ let questions = [
 ];
 console.log(questions.length);
 
-var score = 0;
-
-for (let i = 0; i < questions.length; i++) {
-  console.log(questions[i]);
-  var answer = confirm(questions[i].q);
-}
-
-// add a loop so each question comes up.
+// we've added a kind of alternative to a loop
 
 // FUNCTIONS=======================
 
-// create a function connected to startgame, put "event" to act on what's been listened for:
+// create a function when startgame is clicked,
 function startGame() {
   console.log("startGame");
+  showQuestion();
+  // start timer
+  timeLeft = 60;
+  timerInterval = setInterval(function () {
+    timeLeft--;
+    timerEl.textContent = "Time: " + timeLeft;
 
-  // timer starts
-  // array of Q&A is displayed
+    if (timeLeft <= 0) {
+      console.log("This is timeout");
+      clearInterval(timerInterval);
+      timeleft = "Timeout";
+      //afterFinish()
+      alert("Yo, step up your game...");
+    }
+  }, 1000);
 }
 
-// USER INTERACTIONS
+function showQuestion() {
+  console.log("show function has started");
+  if (currentQuestionIndex == questions.length - 1) {
+    console.log("game over");
+    console.log(
+      "currentQuestionIndex , length ,",
+      currentQuestionIndex,
+      questions.length
+    );
+    alert("game over. Keep studying!");
+  } else {
+    var current_question = questions[currentQuestionIndex];
+    console.log("current question index: ", currentQuestionIndex);
+    console.log("checking function");
+    questionEl.innerText = current_question.question;
+    selectA.innerText = current_question.choiceA;
+    selectB.innerText = current_question.choiceB;
+    selectC.innerText = current_question.choiceC;
+    selectD.innerText = current_question.choiceD;
+    //populate the question div and the answer buttons using current_question
+  }
+}
+
+function scoreQuestion(answer) {
+  showQuestion();
+  var current_question = questions[currentQuestionIndex];
+  if (answer === current_question.correct) {
+    console.log("object function");
+    wins++;
+    scoreButton.innerText = wins;
+  } else {
+    timeLeft = timeLeft - 5;
+  }
+  currentQuestionIndex++;
+  //showQuestion();
+}
+
+// USER INTERACTIONS==========================
 
 startButton.addEventListener("click", startGame);
 
-// // Helper Functions==========================================================
+selectA.addEventListener("click", function () {
+  console.log("option A clicked");
+  scoreQuestion("A");
+});
+selectB.addEventListener("click", function () {
+  console.log("option B clicked");
+  scoreQuestion("B");
+});
+selectC.addEventListener("click", function () {
+  console.log("option C clicked");
+  scoreQuestion("C");
+});
+selectD.addEventListener("click", function () {
+  console.log("option D clicked");
+  scoreQuestion("D");
+});
 
-// // var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-// // start quiz
-
-// // Updating Display based on user interactions ===============================
-
-// // User will click a start button
-
-// // Rules will dissapear
-
-// // Start button will dissapear
-
-// // Main view appears with questions, multiple answers, timer
-
-// // timer starts countdown from 50seconds
-
-// // if counter reaches 0
-// // then game is over
-
-// // user clicks on multiple choice answer
-
-// // if user is correct they get a point
-// // and user is alerted "correct"
-
-// // else (or is this and "when/then promise?")
-// // user is alerted "incorrect"
-// // THEN time is subtracted from clock
-
-// // user will repeat questions and answer
-
-// // WHEN all questions are answered or the timer reaches 0
-// // THEN the game is over
-
-// // WHEN the game is over
-// // Prompt to save user initials and score
-
-// // Starting Data (initialization)  ========================
-// // DOM Elements
-
-// // Clear the form==========================
+//only show the questiona nd options onces start but is clicked
+//dynamically create the options using for loop
+//while creating the options add a class of "options" to all and event add a data attr and add a value
+//add a event liste to options class

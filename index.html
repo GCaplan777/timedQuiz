@@ -8,38 +8,21 @@
   </head>
   <body>
     <div class="container">
-      <div id="questions-container" class="hide"></div>
-      <div id="question">Question</div>
+      <div id="questionDiv">Question</div>
       <div id="answer-buttons" class="btn-grid">
-        <button class="btn">Answer1</button>
-        <button class="btn">Answer2</button>
-        <button class="btn">Answer3</button>
-        <button class="btn">Answer4</button>
+        <button id="A" class="btn">Answer1</button>
+        <button id="B" class="btn">Answer2</button>
+        <button id="C" class="btn">Answer3</button>
+        <button id="D" class="btn">Answer4</button>
       </div>
       <div class="controls">
-        <!-- Start Button -->
         <button id="start-btn" class="start-btn btn">Start Game</button>
-        <button id="next-btn" class="start-btn btn hide">Next</button>
+        <button id="scoreMessage-btn" class="start-btn btn">Your Score</button>
+        <button id="score-btn" class="start-btn btn">0</button>
       </div>
-      <!--1. timer  -->
 
       <p id="timer">Timer</p>
 
-      <div id="question"></div>
-      <div id="choices">
-        <div class="choice" id="A" onclick="checkAnswer('A')"></div>
-        <div class="choice" id="B" onclick="checkAnswer('B')"></div>
-        <div class="choice" id="C" onclick="checkAnswer('C')"></div>
-      </div>
-
-      <!-- 2. score -->
-      <!-- 3. question num -->
-
-      <!-- 4. questions remaining -->
-
-      <!-- row for game -->
-      <!-- form to contain the questions -->
-      <!-- start button -->
       <script src="./script.js"></script>
     </div>
   </body>
