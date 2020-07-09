@@ -6,7 +6,7 @@ This is my BootCamp assignment for a multiple choice quiz.
 
 I had everything up and running and functioning well–except that after the first question showed, I needed to press the answer for the second question twice before the next question would appear. I did a near midnight "askBCS" and I hate to say, but I think the debugging process with the person from BCS may have led to additional comments and changes ended up giving me a few more issues to work out.
 
-I did get great advice from AskBCS for cleaning up code and trying to hide elements until my quiz started. I was told to use a class in JavaScript to make it tidy, and unfortunately, I can't employ that in time for this submission, but i can see how it would look great AND i know the class work we went through to reference. See attached screenshot for reference.
+I did get great advices from AskBCS for cleaning up code and trying to hide elements until my quiz started. I was told to use a class in JavaScript to make it tidy, and unfortunately, I can't employ that in time for this submission, but i can see how it would look great AND i know the class work we went through to reference. See attached screenshot for reference.
 
 And so without further ado............
 

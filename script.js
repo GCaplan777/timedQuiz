@@ -99,6 +99,7 @@ function showQuestion() {
   selectC.style.display = "initial";
   selectD.style.display = "initial";
   scoreButton.style.display = "initial";
+  timerEl.style.display = "initial";
   if (currentQuestionIndex == questions.length - 1) {
     console.log("game over");
     console.log(
